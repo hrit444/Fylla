@@ -109,9 +109,28 @@ main {
           display: none;
         }
 
-        .modes-toggle {
-          padding: 10px;
-          background-color: red;
+        #toggle {
+          display: flex;
+          justify-content: center;
+          background-color: #fdfbf5;
+          border: 1px solid #0e0e0e;
+          border-radius: 20px;
+          padding: 0.5rem 0.5rem;
+          width: 4.5rem;
+          margin-right: 0.7rem;
+          
+          i {
+            display: block;
+            font-size: 1.3rem;
+          }
+
+          #light {
+            color: black;
+          }
+
+          #dark {
+            color: white;
+          }
         }
 
         i {
@@ -473,14 +492,14 @@ footer {
       font-weight: 300;
       font-size: 1rem;
 
-      a{
+      a {
         color: #000;
       }
     }
 
     .right {
       display: flex;
-      gap: 2rem;      
+      gap: 2rem;
 
       h5 {
         font-size: 1rem;
@@ -504,7 +523,6 @@ footer {
         gap: 1rem;
 
         .part-1 {
-          // display: initial;
           display: flex;
           align-items: center;
 
@@ -542,33 +560,19 @@ footer {
               align-items: center;
               border-radius: 50%;
               border: 1px solid black;
-              transition: 0.2s linear;
               cursor: pointer;
 
               a {
                 text-transform: uppercase;
                 font-size: 0.9rem;
                 font-weight: 200;
-                transition: 0.2s linear;
                 color: #000;
                 text-decoration: none;
-              }
-
-              &:hover {
-                background-color: #000;
-              }
-
-              &:hover a {
-                color: white;
               }
             }
           }
 
-          .modes-toggle {
-            padding: 1rem 2rem;
-            background-color: red;
-            cursor: pointer;
-          }
+
 
           i {
             display: none;
@@ -801,22 +805,22 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-  
+
     .top {
       flex-direction: column-reverse;
       gap: 15rem;
       width: 65%;
-  
+
       svg {
         width: 6rem;
       }
-  
+
       .text {
         h5 {
           @include light-text-mobile();
           margin: 1rem 0;
         }
-  
+
         h1 {
           font-size: 5rem;
           line-height: 5.6rem;
@@ -825,26 +829,26 @@ footer {
         }
       }
     }
-  
+
     .line {
       display: block;
       @include v-line();
       margin: 0 2rem;
     }
-  
+
     .bottom {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       // gap: 3rem;
       width: 35%;
-  
+
       h4 {
         font-size: 1.7rem;
         line-height: 2.8rem;
         font-weight: 200;
       }
-  
+
       button {
         @include button-desktop();
         width: fit-content;
@@ -857,7 +861,7 @@ footer {
       @include h-line();
       margin: 3rem 0;
     }
-  
+
     .wrap-main {
       .main {
         display: flex;
@@ -868,31 +872,31 @@ footer {
           justify-content: space-between;
           gap: 4rem;
           width: 35%;
-  
+
           .t-top {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-  
+
             .logos {
               display: flex;
               align-items: center;
               gap: 1rem;
-  
+
               svg {
                 height: 3.15rem;
               }
-  
+
               #svg11433201360 {
                 height: 1rem;
               }
             }
-  
+
             .address {
               display: flex;
               flex-direction: column;
               gap: 0.3rem;
-  
+
               p {
                 font-size: 1rem;
                 font-weight: 200;
@@ -915,34 +919,24 @@ footer {
               align-items: center;
               border-radius: 50%;
               border: 1px solid black;
-              transition: 0.2s linear;
               cursor: pointer;
 
               a {
                 text-transform: uppercase;
                 font-size: 0.9rem;
                 font-weight: 200;
-                transition: 0.2s linear;
                 color: #000;
                 text-decoration: none;
-              }
-
-              &:hover {
-                background-color: #000;
-              }
-
-              &:hover a {
-                color: white;
               }
             }
           }
         }
 
-        .line{
+        .line {
           @include v-line();
           margin: 0;
         }
-  
+
         .bottom {
           display: flex;
           flex-direction: row;
@@ -950,35 +944,35 @@ footer {
           width: 65%;
           gap: 0;
           padding: 0 4rem;
-  
+
           .elem {
             display: flex;
             flex-direction: column;
             gap: 1.3rem;
-  
+
             h3 {
               font-size: 1.7rem;
               font-weight: 400;
             }
-  
+
             h4 {
               font-size: 1rem;
               letter-spacing: 1px;
             }
-  
+
             button {
               @include button-mobile();
               width: fit-content;
             }
           }
 
-          .line{
+          .line {
             display: none;
           }
         }
       }
     }
-  
+
     .f-bottom {
       display: flex;
       flex-direction: row;
@@ -986,25 +980,56 @@ footer {
       align-items: center;
       gap: 1rem;
       letter-spacing: 0.5px;
-  
+
       h4 {
         font-weight: 300;
         font-size: 1rem;
-  
-        a{
+
+        a {
           color: #000;
         }
       }
-  
+
       .right {
         display: flex;
-        gap: 2rem;      
-  
+        gap: 2rem;
+
         h5 {
           font-size: 1rem;
           font-weight: 300;
         }
       }
     }
+  }
+}
+
+.light {
+  background-color: #fdfbf5;
+  border: #000;
+
+  #light{
+    display: block;
+  }
+
+  #dark{
+    display: none;
+  }
+}
+
+.dark {
+  background-color: #000;
+  color: #fdfbf5;
+
+  main {
+    border: 1px solid #fdfbf5;
+    background-color: #000000;
+  }
+
+  #light{
+    display: none;
+  }
+
+  #dark{
+    display: block;
   }
 }

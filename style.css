@@ -59,9 +59,25 @@ main {
 .view-1 nav .right .part-2 .links {
   display: none;
 }
-.view-1 nav .right .part-2 .modes-toggle {
-  padding: 10px;
-  background-color: red;
+.view-1 nav .right .part-2 #toggle {
+  display: flex;
+  justify-content: center;
+  background-color: #fdfbf5;
+  border: 1px solid #0e0e0e;
+  border-radius: 20px;
+  padding: 0.5rem 0.5rem;
+  width: 4.5rem;
+  margin-right: 0.7rem;
+}
+.view-1 nav .right .part-2 #toggle i {
+  display: block;
+  font-size: 1.3rem;
+}
+.view-1 nav .right .part-2 #toggle #light {
+  color: black;
+}
+.view-1 nav .right .part-2 #toggle #dark {
+  color: white;
 }
 .view-1 nav .right .part-2 i {
   font-size: 2.5rem;
@@ -463,27 +479,14 @@ footer .f-bottom .right h5 {
     align-items: center;
     border-radius: 50%;
     border: 1px solid black;
-    transition: 0.2s linear;
     cursor: pointer;
   }
   .view-1 nav .right .part-2 .links .link a {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 200;
-    transition: 0.2s linear;
     color: #000;
     text-decoration: none;
-  }
-  .view-1 nav .right .part-2 .links .link:hover {
-    background-color: #000;
-  }
-  .view-1 nav .right .part-2 .links .link:hover a {
-    color: white;
-  }
-  .view-1 nav .right .part-2 .modes-toggle {
-    padding: 1rem 2rem;
-    background-color: red;
-    cursor: pointer;
   }
   .view-1 nav .right .part-2 i {
     display: none;
@@ -793,22 +796,14 @@ footer .f-bottom .right h5 {
     align-items: center;
     border-radius: 50%;
     border: 1px solid black;
-    transition: 0.2s linear;
     cursor: pointer;
   }
   footer .wrap-main .main .top .links .link a {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 200;
-    transition: 0.2s linear;
     color: #000;
     text-decoration: none;
-  }
-  footer .wrap-main .main .top .links .link:hover {
-    background-color: #000;
-  }
-  footer .wrap-main .main .top .links .link:hover a {
-    color: white;
   }
   footer .wrap-main .main .line {
     height: initial;
@@ -877,4 +872,29 @@ footer .f-bottom .right h5 {
     font-size: 1rem;
     font-weight: 300;
   }
+}
+.light {
+  background-color: #fdfbf5;
+  border: #000;
+}
+.light #light {
+  display: block;
+}
+.light #dark {
+  display: none;
+}
+
+.dark {
+  background-color: #000;
+  color: #fdfbf5;
+}
+.dark main {
+  border: 1px solid #fdfbf5;
+  background-color: #000000;
+}
+.dark #light {
+  display: none;
+}
+.dark #dark {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
