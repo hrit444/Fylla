@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Syne;
+  src: url(./Syne-Regular.woff2);
+}
+
 @mixin button-desktop {
   border: none;
   background-color: black;
@@ -46,8 +51,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Syne;
 }
 
 html,
@@ -163,11 +167,11 @@ main {
       }
 
       h1 {
-        // font-size: 4.1rem;
-        font-size: 16vw;
+        font-size: 14vw;
         line-height: 15vw;
         width: 90%;
-        font-weight: 400;
+        font-weight: 300;
+        font-family: Syne;
       }
     }
 
@@ -205,7 +209,7 @@ main {
       }
 
       h1 {
-        font-size: 12vw;
+        font-size: 11.5vw;
         line-height: 13vw;
         font-weight: 400;
       }
@@ -242,7 +246,7 @@ main {
       }
 
       p {
-        font-size: 4.4vw;
+        font-size: 4vw;
         line-height: 5vw;
         font-weight: 100;
       }
@@ -274,8 +278,8 @@ main {
         gap: 3.4vw;
 
         h2 {
-          font-size: 11vw;
-          line-height: 13vw;
+          font-size: 10vw;
+          line-height: 11vw;
           font-weight: 400;
           text-transform: uppercase;
         }
@@ -284,7 +288,8 @@ main {
           font-size: 4.6vw;
           line-height: 7vw;
           font-weight: 300;
-          width: 85%;
+          // width: 85%;
+          font-family: sans-serif;
         }
       }
     }
@@ -369,6 +374,7 @@ main {
     gap: 15vw;
 
     h4 {
+      font-family: sans-serif;
       font-size: 4.4vw;
       line-height: 6.5vw;
       font-weight: 200;
@@ -420,6 +426,7 @@ footer {
             gap: 2vw;
 
             p {
+              font-family: sans-serif;
               font-size: 3.7vw;
               font-weight: 200;
             }
@@ -509,6 +516,12 @@ footer {
   }
 }
 
+.elem {
+  p{
+    font-family: sans-serif;
+  }
+}
+
 @media (min-width: 1020px) {
   body {
     padding: 1.2vw;
@@ -549,7 +562,7 @@ footer {
             text-transform: uppercase;
             font-size: 1.1vw;
             font-weight: 300;
-            padding: 0 1vw;
+            margin: 0 1vw;
             cursor: pointer;
           }
         }
@@ -638,9 +651,10 @@ footer {
         }
 
         h1 {
-          font-size: 7vw;
+          font-size: 7.5vw;
           line-height: 7vw;
           font-weight: 350;
+          font-family: Syne;
         }
       }
 
@@ -675,8 +689,8 @@ footer {
         }
 
         h1 {
-          font-size: 5.1vw;
-          line-height: 5vw;
+          font-size: 6vw;
+          line-height: 6vw;
           width: 85%;
         }
       }
@@ -753,14 +767,14 @@ footer {
           top: 0;
 
           h2 {
-            font-size: 3.3vw;
-            line-height: 3.8vw;
+            font-size: 4.5vw;
+            line-height: 5vw;
             font-weight: 400;
             text-transform: uppercase;
           }
 
           h4 {
-            font-size: 1.4vw;
+            font-size: 1.5vw;
             line-height: 2vw;
             font-weight: 200;
             width: 100%;
@@ -864,8 +878,8 @@ footer {
         }
 
         h1 {
-          font-size: 5.3vw;
-          line-height: 5.2vw;
+          font-size: 6vw;
+          line-height: 6vw;
           text-transform: uppercase;
           font-weight: 400;
         }
@@ -1048,6 +1062,29 @@ footer {
       }
     }
   }
+
+  .hovering-elements{
+    position: relative;
+    width: fit-content;
+    padding-bottom: 0.2vw;
+    cursor: pointer;
+    font-family: sans-serif;
+
+    &::after{
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 0%;
+      background-color: #000;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }
 
 .light {
@@ -1060,6 +1097,12 @@ footer {
 
   #dark {
     display: none;
+  }
+
+  .hovering-elements{
+    &::after{
+      background-color: #000;
+    }
   }
 }
 
@@ -1078,5 +1121,11 @@ footer {
 
   #dark {
     display: block;
+  }
+
+  .hovering-elements{
+    &::after{
+      background-color: #fdfbf5;
+    }
   }
 }

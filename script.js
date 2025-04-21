@@ -40,6 +40,26 @@ const lightMode = () => {
     val.style.backgroundColor = "black";
   });
 
+  roundedLink.forEach(function (val) {
+    val.addEventListener("mouseenter", function () {
+      val.style.backgroundColor = "black";
+      let link = val.querySelector("a");
+      if (link) link.style.color = "#fdfbf5";
+    });
+
+    val.addEventListener("mouseleave", function () {
+      val.style.backgroundColor = "#fdfbf5";
+      let link = val.querySelector("a");
+      if (link) link.style.color = "black";
+    });
+
+
+    val.style.backgroundColor = "#fdfbf5";
+    val.style.borderColor = "black";
+    let link = val.querySelector("a");
+    if (link) link.style.color = "black";
+  });
+
   links.style.borderColor = "black";
   toggle.style.backgroundColor = "#fdfbf5";
   toggle.style.borderColor = "black";
@@ -74,11 +94,60 @@ const darkMode = () => {
     val.style.backgroundColor = "#fdfbf5";
   });
 
+  roundedLink.forEach(function (val) {
+    val.addEventListener("mouseenter", function () {
+      val.style.backgroundColor = "#fdfbf5";
+      let link = val.querySelector("a");
+      if (link) link.style.color = "black";
+    });
+
+    val.addEventListener("mouseleave", function () {
+      val.style.backgroundColor = "black";
+      let link = val.querySelector("a");
+      if (link) link.style.color = "#fdfbf5";
+    });
+
+    val.style.backgroundColor = "black";
+    val.style.borderColor = "#fdfbf5";
+    let link = val.querySelector("a");
+    if (link) link.style.color = "#fdfbf5";
+  });
+  
   links.style.borderColor = "#fdfbf5";
   toggle.style.backgroundColor = "black";
   toggle.style.borderColor = "#fdfbf5";
   toggle.style.justifyContent = "flex-end";
 };
+
+//hovering effect
+
+// roundedLink.forEach(function (val) {
+//   val.addEventListener("mouseenter", function () {
+//     if (body.classList.contains("light")) {
+//       val.style.backgroundColor = "black";
+//       let link = val.querySelector("a");
+//       if (link) link.style.color = "#fdfbf5";
+//     } else {
+//       val.style.backgroundColor = "#fdfbf5";
+//       let link = val.querySelector("a");
+//       if (link) link.style.color = "black";
+//     }
+//   });
+
+//   val.addEventListener("mouseleave", function () {
+//     if (body.classList.contains("light")) {
+//       val.style.backgroundColor = "#fdfbf5";
+//       let link = val.querySelector("a");
+//       if (link) link.style.color = "black";
+//     } else {
+//       val.style.backgroundColor = "black";
+//       let link = val.querySelector("a");
+//       if (link) link.style.color = "#fdfbf5";
+//     }
+//   });
+// });
+
+//when opening the website it checks the mode and call the function once to
 
 if (mode === "dark") {
   darkMode();
